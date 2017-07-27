@@ -93,7 +93,7 @@ class ColorBase {
         return "rgb({$rgb['R']},{$rgb['G']},{$rgb['B']});";
     }
 
-    public static function getCssGradient($color,$steps,$old_browsers = true)
+    public static function getCssGradient($color,$steps=25,$old_browsers = true)
     {
         $color = new PHPColors($color);
         return $color->getCssGradient($steps,$old_browsers);
@@ -105,13 +105,13 @@ class ColorBase {
         return '#' . $color->mix($color2, $amount);
     }
 
-    public static function imageInfo($path,$palette_num=5,$num_samples=10)
+    public static function imageInfo($path,$palette_num=5,$num_samples=10,$threshold=170)
     {
 
         $key = 'colors-imageInfo'.$path.$palette_num.$num_samples;
         $info = Cache::rememberForever($key, function() use($path,$palette_num,$num_samples) {
 
-            $filename = base_path($path);
+            $filename = $path;
 
             $palette = Palette::fromFilename($filename);
 
@@ -128,7 +128,7 @@ class ColorBase {
             return (object) [
                 'palette'   => (object) $color,
                 'luminance' => $luminance,
-                'is_light'  => $luminance > 170 ? true : false,
+                'is_light'  => $luminance > $threshold ? true : false,
             ];
         });
 
@@ -139,13 +139,19 @@ class ColorBase {
     {
         $key = 'colors-extract'.$path.$num;
         $extract = Cache::rememberForever($key, function() use($path,$num) {
-            $palette = Palette::fromFilename(base_path($path));
+            $palette = Palette::fromFilename($path);
             //$most_used_colors = $palette->getMostUsedColors($num);
             $extractor = new ColorExtractor($palette);
             $most_used_colors = $extractor->extract($num);
 
-            foreach ($most_used_colors as $colorInt) {
-                $color[] = Color::fromIntToHex($colorInt);
+            if($num >= 2){
+
+                foreach ($most_used_colors as $colorInt) {
+                    $color[] = Color::fromIntToHex($colorInt);
+                }
+
+            } else {
+                $color = Color::fromIntToHex($most_used_colors[0]);
             }
 
             return $color;
@@ -154,15 +160,15 @@ class ColorBase {
         return $extract;
     }
 
-    public static function imgLight($filename,$num_samples=10)
+    public static function imgLight($filename,$num_samples=10,$threshold)
     {
         $key = 'colors-imgLight'.$filename.$num_samples;
         
         $luminance = Cache::rememberForever($key, function() use ($filename, $num_samples) {
-            return self::getluminance(base_path($filename), $num_samples);
+            return self::getluminance($filename, $num_samples);
         });
 
-        return $luminance > 170 ? true : false;
+        return $luminance > $threshold ? true : false;
     }
 
     /* outils */
