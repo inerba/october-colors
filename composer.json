@@ -1,0 +1,7 @@
+{
+    "require": {
+        "league/color-extractor": "0.3.*",
+        "mexitek/phpcolors": "dev-master",
+        "phlak/colorizer": "^3.0"
+    }
+}
