@@ -105,6 +105,36 @@ class ColorBase {
         return '#' . $color->mix($color2, $amount);
     }
 
+    public static function imageInfo($path,$palette_num=5,$num_samples=10)
+    {
+
+        $key = 'colors-imageInfo'.$path.$palette_num.$num_samples;
+        $info = Cache::rememberForever($key, function() use($path,$palette_num,$num_samples) {
+
+            $filename = base_path($path);
+
+            $palette = Palette::fromFilename($filename);
+
+            $extractor = new ColorExtractor($palette);
+            $most_used_colors = $extractor->extract($palette_num);
+
+            foreach ($most_used_colors as $colorInt) {
+                $color[] = Color::fromIntToHex($colorInt);
+            }
+
+            $luminance = self::getluminance($filename, $num_samples);
+            $color_palette = $color;
+            
+            return (object) [
+                'palette'   => (object) $color,
+                'luminance' => $luminance,
+                'is_light'  => $luminance > 170 ? true : false,
+            ];
+        });
+
+        return $info;
+    }
+
     public static function extract($path,$num=5)
     {
         $key = 'colors-extract'.$path.$num;

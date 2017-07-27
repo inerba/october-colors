@@ -42,6 +42,7 @@ class Plugin extends PluginBase
                 
                 'color_random'        => [ColorBase::class, 'random'],
 
+                'color_imageInfo'     => [ColorBase::class, 'imageInfo'],
                 'color_extract'       => [ColorBase::class, 'extract'],
                 'color_imgLight'      => [ColorBase::class, 'imgLight'],
             ]
