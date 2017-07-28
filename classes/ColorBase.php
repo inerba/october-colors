@@ -49,7 +49,7 @@ class ColorBase {
 
     }
 
-    public static function desaturate($color,$saturation)
+    public static function desaturate($color,$saturation=20)
     {
         $hsl = PHPColors::hexToHsl($color);
 
@@ -99,7 +99,7 @@ class ColorBase {
         return $color->getCssGradient($steps,$old_browsers);
     }
 
-    public static function mix($color,$color2, $amount = 0)
+    public static function mix($color,$color2, $amount = 50)
     {
         $color = new PHPColors($color);
         return '#' . $color->mix($color2, $amount);
