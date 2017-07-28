@@ -2,7 +2,7 @@ Colors
 ===================
 Plugin per October cms che contiene filtri twig per effettuare varie operazioni sui colori, estrarre i colori dalle immagini e percepirne la luminosità.
 
-Questo plugin per poter funzionare, frutta le seguenti librerie:
+Questo plugin per poter funzionare, sfrutta le seguenti librerie:
  - [mexitek/phpcolors](https://github.com/mexitek/phpColors)
  - [phlak/colorizer](https://github.com/PHLAK/Colorizer)
  - [league/color-extractor](https://github.com/thephpleague/color-extractor)
@@ -113,6 +113,6 @@ Puoi usare tutte le funzioni, basta che non usi il prefisso *color_*
 ```php
 use Inerba\Colors\Classes\ColorBase as Colors;
 
-$dark_color = '990099';
+$dark_color = '#990099';
 $color = Colors::lighten($dark_color, 50); // return '#9CA759'
 ```
