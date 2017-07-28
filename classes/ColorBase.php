@@ -93,7 +93,7 @@ class ColorBase {
         return "rgb({$rgb['R']},{$rgb['G']},{$rgb['B']});";
     }
 
-    public static function getCssGradient($color,$steps=25,$old_browsers = true)
+    public static function gradient($color,$steps=25,$old_browsers = true)
     {
         $color = new PHPColors($color);
         return $color->getCssGradient($steps,$old_browsers);

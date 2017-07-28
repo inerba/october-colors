@@ -37,7 +37,7 @@ class Plugin extends PluginBase
                 'color_desaturate'    => [ColorBase::class, 'desaturate'],
                 'color_mix'           => [ColorBase::class, 'mix'],
                 'color_random'        => [ColorBase::class, 'random'],
-                'color_gradient'      => [ColorBase::class, 'getCssGradient'],
+                'color_gradient'      => [ColorBase::class, 'gradient'],
 
                 'color_extract'       => [ColorBase::class, 'extract'],
                 'color_imgLight'      => [ColorBase::class, 'imgLight'],

@@ -58,31 +58,22 @@ Restituisce gli stili css inline per un gradient background
 style="{{ color_gradient('#990099') }}"
 ```
 
-#### color\_complementary
-`color_complementary(string $color)`
+#### color\_extract
+`color_extract(string $path, int $palette=5)`
 
-Restituisce il colore a tinta opposta a quello inserito
+Restituisce un array con i colori più rappresentativi dell'immagine inserita
 
-#### color\_complementary
-`color_complementary(string $color)`
+#### color\_imgLight
+`color_imgLight(string $path, int $samples=10, int $threshold=170)`
 
-Restituisce il colore a tinta opposta a quello inserito
-
-#### color\_complementary
-`color_complementary(string $color)`
-
-Restituisce il colore a tinta opposta a quello inserito
+Restituisce *true* se l'immagine è chiara, puoi definire il campionamento *$samples* e la soglia di luminanza *$threshold*
 
 #### color\_complementary
-`color_complementary(string $color)`
+`color_rgbToHex(int $red, int $green, int $blue)`
 
-Restituisce il colore a tinta opposta a quello inserito
+Restituisce l'esadecimale delle componenti rgb del colore
 
+#### color\_complementary
+`color_hexToRgb(string $color, float $alpha)`
 
-| Filtro   |      Parametri      |  Descrizione |
-|----------|:-------------:|------:|
-| color_gradient | *string* hex color, *int* steps, *bool* compatibility mode |  Restituisce gli stili css inline per un gradient background es: `style="{{ color_gradient('#990099') }}"`  |
-| color_extract | *string* image path, *int* number of colors |  Restituisce un array con i colori più rappresentativi |
-| color_imgLight | *string* image path, *int* samples, *int* luminance threshold |  Restituisce *true* se l'immagine è chiara, puoi definire il campionamento e la soglia di luminanza  |
-| color_rgbToHex | *int* red, *int* green, *int* blue |  Restituisce l'esadecimale delle componenti rgb del colore  |
-| color_hexToRgb | *string* hex color, alpha |  restituisce il css del colore rgb o rgba (se usiamo l'alpha channel)  |
+restituisce il css del colore rgb o rgba (se usiamo l'alpha channel)
