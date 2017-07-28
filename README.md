@@ -86,5 +86,5 @@ Puoi usare tutte le funzioni, basta che non usi il prefisso *color_*
 use Inerba\Colors\Classes\ColorBase as Colors;
 
 $dark_color = '990099';
-$color = Colors::lighten($dark_color, 50);
+$color = Colors::lighten($dark_color, 50); // return '#9CA759'
 ```
