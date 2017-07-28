@@ -160,7 +160,7 @@ class ColorBase {
         return $extract;
     }
 
-    public static function imgLight($filename,$num_samples=10,$threshold)
+    public static function imgLight($filename,$num_samples=10,$threshold=170)
     {
         $key = 'colors-imgLight'.$filename.$num_samples;
         
