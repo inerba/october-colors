@@ -3,6 +3,12 @@ Filtri twig per effettuare varie operazioni sui colori, estrarre i colori dalle 
 
 ## filtri a disposizione
 
+### color_lighten
+`color_lighten(string $color, int $percent = 20)`
+
+Schiarisce il colore della percentuale selezionata
+
+
 | Filtro   |      Parametri      |  Descrizione |
 |----------|:-------------:|------:|
 | color_lighten |  `color_lighten(string $color, int $percent = 20)` | Schiarisce il colore della percentuale selezionata es:`color_lighten('#990099', 30)` |
