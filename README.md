@@ -3,9 +3,9 @@ Colors
 Plugin per October cms che contiene filtri twig per effettuare varie operazioni sui colori, estrarre i colori dalle immagini e percepirne la luminosità.
 
 Questo plugin per poter funzionare, frutta le seguenti librerie:
- - league/color-extractor
- - mexitek/phpcolors
- - phlak/colorizer
+ - [mexitek/phpcolors](https://github.com/mexitek/phpColors)
+ - [phlak/colorizer](https://github.com/PHLAK/Colorizer)
+ - [league/color-extractor](https://github.com/thephpleague/color-extractor)
 
 --------------------
 
