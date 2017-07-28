@@ -1,5 +1,20 @@
-# Colors
+Colors
+===================
 Filtri twig per effettuare varie operazioni sui colori, estrarre i colori dalle immagini e percepirne la luminosità
+
+--------------------
+
+Installazione
+-------------
+
+Questo plugin è ancora in fase sperimantale, pertanto non è ancora possibile installarlo tramite il normale processo di installazione di October CMS.
+
+ - per installare il pacchetto, vai nella cartella `plugins` dell'installazione di october e clona questo repository nella cartella `inerba/colors`.
+	 `git clone https://github.com/inerba/october-colors.git inerba/colors`
+
+ - vai nella cartella appena creata: `inerba/colors` e installa tutte le dipendenze con `composer install`
+
+----------
 
 ## Filtri a disposizione
 
