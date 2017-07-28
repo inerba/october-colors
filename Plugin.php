@@ -35,16 +35,16 @@ class Plugin extends PluginBase
                 'color_complementary' => [ColorBase::class, 'complementary'],
                 'color_greyscale'     => [ColorBase::class, 'greyscale'],
                 'color_desaturate'    => [ColorBase::class, 'desaturate'],
-                'color_rgbToHex'      => [ColorBase::class, 'rgbToHex'],
-                'color_hexToRgb'      => [ColorBase::class, 'hexToRgb'],
-                'color_gradient'      => [ColorBase::class, 'getCssGradient'],
                 'color_mix'           => [ColorBase::class, 'mix'],
-                
                 'color_random'        => [ColorBase::class, 'random'],
+                'color_gradient'      => [ColorBase::class, 'getCssGradient'],
 
-                'color_imageInfo'     => [ColorBase::class, 'imageInfo'],
                 'color_extract'       => [ColorBase::class, 'extract'],
                 'color_imgLight'      => [ColorBase::class, 'imgLight'],
+                
+                'color_imageInfo'     => [ColorBase::class, 'imageInfo'],
+                'color_rgbToHex'      => [ColorBase::class, 'rgbToHex'],
+                'color_hexToRgb'      => [ColorBase::class, 'hexToRgb'],
             ]
         ];
     }
