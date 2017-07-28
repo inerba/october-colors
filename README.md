@@ -3,18 +3,29 @@ Filtri twig per effettuare varie operazioni sui colori, estrarre i colori dalle 
 
 ## filtri a disposizione
 
-### color_lighten
+#### color\_lighten
 `color_lighten(string $color, int $percent = 20)`
 
 Schiarisce il colore della percentuale selezionata
 
+#### color\_darken
+`color_darken(string $color, int $percent = 20)`
+
+Scurisce il colore della percentuale selezionata
+
+#### color\_isLight
+`color_isLight(string $color)`
+
+Restituisce *true* se il colore è chiaro
+
+#### color\_isDark
+`color_isDark(string $color)`
+
+Restituisce *true* se il colore è scuro
+
 
 | Filtro   |      Parametri      |  Descrizione |
 |----------|:-------------:|------:|
-| color_lighten |  `color_lighten(string $color, int $percent = 20)` | Schiarisce il colore della percentuale selezionata es:`color_lighten('#990099', 30)` |
-| color_darken |  *string* hex color, *int* percentage  | Scurisce il colore della percentuale selezionata es:`color_darken('#990099', 30)` |
-| color_isLight | *string* hex color |  Restituisce *true* se il colore è chiaro  |
-| color_isDark | *string* hex color |  Restituisce *true* se il colore è scuro  |
 | color_complementary | *string* hex color |  Restituisce il colore a tinta opposta a quello inserito  |
 | color_greyscale | *string* hex color |  Restituisce il colore nella scala dei grigi  |
 | color_desaturate |*string* hex color, *int* percentage |  Restituisce il colore desaturato rispetto alla percentuale inserita  |
