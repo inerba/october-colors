@@ -39,11 +39,6 @@ class ColorBase {
         return '#' . $color->complementary($color);
     }
 
-    public static function rgbToHex($r,$g,$b)
-    {
-        return '#' . PHPColors::rgbToHex(['R'=>$r,'G'=>$g,'B'=>$b]);
-    }
-
     public static function greyscale($color)
     {
         $rgb = PHPColors::hexToRgb($color);
@@ -82,6 +77,11 @@ class ColorBase {
 
         return $color->hex();
 
+    }
+
+    public static function rgbToHex($r,$g,$b)
+    {
+        return '#' . PHPColors::rgbToHex(['R'=>$r,'G'=>$g,'B'=>$b]);
     }
 
     public static function hexToRgb($hex,$alpha=false)
