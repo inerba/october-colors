@@ -20,7 +20,12 @@ Questo plugin è ancora in fase sperimantale, pertanto non è ancora possibile i
  	git clone https://github.com/inerba/october-colors.git plugins/inerba/colors
  	```
 
- - vai nella cartella appena creata: `inerba/colors` e installa tutte le dipendenze con `composer install`
+ - vai nella cartella appena creata: `plugins/inerba/colors` e installa tutte le dipendenze con `composer install`
+ - puoi aggiornare il plugin con un semplice *pull*
+
+  	```bash
+ 	git pull origin master
+ 	```
 
 ----------
 
