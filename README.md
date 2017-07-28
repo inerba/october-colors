@@ -85,6 +85,10 @@ Restituisce gli stili css inline per un gradient background
 ```twig
 style="{{ color_gradient('#990099') }}"
 ```
+restituirà:
+```html
+style="background-color: #990099;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1aff', endColorstr='#990099');background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff1aff), to(#990099));background-image: -webkit-linear-gradient(top, #ff1aff, #990099);background-image: -moz-linear-gradient(top, #ff1aff, #990099);background-image: -o-linear-gradient(top, #ff1aff, #990099);background-image: linear-gradient(to bottom, #ff1aff, #990099);
+```
 
 #### color\_extract
 `{{ color_extract(string $path, int $palette=5) }}`
